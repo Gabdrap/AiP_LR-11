@@ -15,25 +15,36 @@ int main()
     cin >> choise;
 
     if (choise == 1)
-    {
+    { 
         int N;
-        cout << "Введите ваше число: ";
+        cout << "Введите целое число N: ";
         cin >> N;
-        for (N; N > N; N / N)
+
+        cout << "Разложение на простые множители: ";
+        for (; N % 2 == 0; N /= 2) 
         {
-            cout << N / N;
+            cout << 2 << " ";
         }
-        return 0;
+
+        for (int i = 3; i * i <= N; i += 2) 
+        {
+            for (; N % i == 0; N /= i) 
+            {
+                cout << i << " ";
+            }
+        }
+
+        if (N > 2)
+        {
+            cout << N << " ";
+        }
     }
     if (choise == 2)
     {
-        
+
     }
     if (choise == 3)
     {
-        
-        return 0;
-    }
 
-    return 0;
+    }
 }
