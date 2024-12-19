@@ -24,13 +24,14 @@ int main()
 
         cout << "Разложение числа " << N << " на простые множители: ";
 
-        for (int i = 2; i <= N; ++i) 
+        for (int i = 2; i <= N; ++i)
         {
-            while (N % i == 0) 
+            while (N % i == 0)
             {
                 cout << i << " ";
                 N /= i;
             }
+        }
     }
     if (choise == 2)
     {
@@ -53,5 +54,31 @@ int main()
         cout << "Суммарный пробег: " << fixed << setprecision(2) << totalDistance << " км" << endl;
 
         return 0;
+    }
+    if (choise == 3)
+    {
+        int num = 2;
+
+        cout << "Простые числа от 2 до 100:\n";
+
+        while (num <= 100) {
+            int i = 2;
+            bool isPrime = true;
+
+            do {
+                if (num % i == 0 && i != num) 
+                {
+                    isPrime = false;
+                    break;
+                }
+                i++;
+            } while (i * i <= num);
+
+            if (isPrime) {
+                cout << num << " ";
+            }
+
+            num++;
+        }
     }
 }
